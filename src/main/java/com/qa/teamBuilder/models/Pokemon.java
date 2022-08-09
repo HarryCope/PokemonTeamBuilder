@@ -1,4 +1,4 @@
-package com.qa.models;
+package com.qa.teamBuilder.models;
 
 import java.util.Objects;
 
@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity	
 public class Pokemon {
@@ -19,6 +20,9 @@ public class Pokemon {
 	
 	@NotNull
 	private String name;
+	
+	@Size(min = 2, max = 12)
+	private String held_item;
 	
 	@NotNull
 	private String type;
@@ -31,19 +35,21 @@ public class Pokemon {
 		
 	}
 
-	public Pokemon(Long pokemonId, @NotNull String name, @NotNull String type, @Min(1) @Max(100) int level) {
+	public Pokemon(Long pokemonId, @NotNull String name, @NotNull String type, @Min(1) @Max(100) int level, @Size(min = 2, max = 12) String held_item) {
 		super();
 		this.pokemonId = pokemonId;
 		this.name = name;
 		this.type = type;
 		this.level = level;
+		this.held_item = held_item;
 	}
 
-	public Pokemon(@NotNull String name, @NotNull String type, @Min(1) @Max(100) int level) {
+	public Pokemon(@NotNull String name, @NotNull String type, @Min(1) @Max(100) int level, @Size(min = 2, max = 12) String held_item) {
 		super();
 		this.name = name;
 		this.type = type;
 		this.level = level;
+		this.held_item = held_item;
 	}
 
 	public Long getPokemonId() {
@@ -52,6 +58,14 @@ public class Pokemon {
 
 	public void setPokemonId(Long pokemonId) {
 		this.pokemonId = pokemonId;
+	}
+	
+	public String getHeldItem() {
+		return held_item;
+	}
+
+	public void setHeldItem(String held_item) {
+		this.held_item = held_item;
 	}
 
 	public String getName() {
@@ -80,7 +94,7 @@ public class Pokemon {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(level, name, pokemonId, type);
+		return Objects.hash(level, name, pokemonId, type, held_item);
 	}
 
 	@Override
@@ -93,12 +107,12 @@ public class Pokemon {
 			return false;
 		Pokemon other = (Pokemon) obj;
 		return level == other.level && Objects.equals(name, other.name) && Objects.equals(pokemonId, other.pokemonId)
-				&& Objects.equals(type, other.type);
+				&& Objects.equals(type, other.type) && Objects.equals(held_item, other.held_item);
 	}
 
 	@Override
 	public String toString() {
-		return "Pokemon [pokemonId= " + pokemonId + ", name= " + name + ", type= " + type + ", level= " + level + "]";
+		return "Pokemon [pokemonId= " + pokemonId + ", name= " + name + ", type= " + type + ", level= " + level + ", held item= " + held_item + "]";
 	}
 	
 	
