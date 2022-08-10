@@ -3,7 +3,6 @@ package com.qa.teamBuilder.controller;
 
 	import java.util.List;
 
-	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.http.HttpStatus;
 	import org.springframework.http.ResponseEntity;
 	import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,19 +22,11 @@ package com.qa.teamBuilder.controller;
 		
 		PokemonService service;
 		
-		@Autowired
 		public PokemonController(PokemonService service) {
 			this.service = service;
 		}
 
-		//@GetMapping()
-		//public String showHOne() {
-		//	return "<h1>Cats!</h1>"
-		//			+ "<br/>"
-		//			+ "<p> Home </p>";
-		//}
-		
-		@GetMapping("/getPokemons")
+		@GetMapping("/getPokemon")
 		public ResponseEntity <List<Pokemon>> getPokemon() {
 			List<Pokemon> pokemonData = service.readAllPokemon();
 			return new ResponseEntity<List<Pokemon>>(pokemonData, HttpStatus.OK);

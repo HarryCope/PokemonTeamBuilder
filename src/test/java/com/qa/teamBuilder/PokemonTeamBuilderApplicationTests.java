@@ -1,4 +1,4 @@
-package com.qa.firstSpring;
+package com.qa.teamBuilder;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

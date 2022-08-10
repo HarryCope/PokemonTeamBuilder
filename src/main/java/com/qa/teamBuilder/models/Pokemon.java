@@ -2,14 +2,12 @@ package com.qa.teamBuilder.models;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
 
 @Entity	
 public class Pokemon {
@@ -18,24 +16,27 @@ public class Pokemon {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long pokemonId;
 	
-	@NotNull
+	@Column(nullable = false )
 	private String name;
 	
-	@Size(min = 2, max = 12)
+	@Column
 	private String held_item;
 	
-	@NotNull
+	@Column(nullable = false )
 	private String type;
 	
-	@Min(1)
-	@Max(100)
+	//@Min(1)
+	//@Max(100)
+	@Column
 	private int level;
+	
+	
 	
 	public Pokemon() {
 		
 	}
 
-	public Pokemon(Long pokemonId, @NotNull String name, @NotNull String type, @Min(1) @Max(100) int level, @Size(min = 2, max = 12) String held_item) {
+	public Pokemon(Long pokemonId, String name, String type, int level, String held_item) {
 		super();
 		this.pokemonId = pokemonId;
 		this.name = name;
@@ -44,7 +45,7 @@ public class Pokemon {
 		this.held_item = held_item;
 	}
 
-	public Pokemon(@NotNull String name, @NotNull String type, @Min(1) @Max(100) int level, @Size(min = 2, max = 12) String held_item) {
+	public Pokemon( String name,  String type, int level, String held_item) {
 		super();
 		this.name = name;
 		this.type = type;
