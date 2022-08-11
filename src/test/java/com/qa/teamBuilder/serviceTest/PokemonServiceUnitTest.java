@@ -1,4 +1,4 @@
-package com.qa.teamBuilder.service;
+package com.qa.teamBuilder.serviceTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -33,8 +33,7 @@ public class PokemonServiceUnitTest {
 			Mockito.when(this.service.createPokemon(savePokemon)).thenReturn(repoPokemon);
 			assertEquals(repoPokemon, this.repo.save(savePokemon));
 			Mockito.verify(this.repo, Mockito.times(1)).save(savePokemon);
-			
-			
+					
 		}
 		
 		@Test

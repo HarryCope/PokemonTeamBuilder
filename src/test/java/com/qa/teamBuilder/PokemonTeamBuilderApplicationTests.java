@@ -9,5 +9,4 @@ class PokemonTeamBuilderApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

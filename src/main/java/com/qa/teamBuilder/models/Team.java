@@ -54,7 +54,5 @@ public class Team {
 	@Override
 	public String toString() {
 		return "Teams [teamId= " + teamId + ", team name= " + team_name + "]";
-	}
-	
-	
+	}	
 }

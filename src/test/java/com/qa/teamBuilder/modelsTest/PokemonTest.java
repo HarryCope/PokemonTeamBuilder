@@ -1,4 +1,4 @@
-package com.qa.teamBuilder.models;
+package com.qa.teamBuilder.modelsTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
+
+import com.qa.teamBuilder.models.Pokemon;
 
 //import nl.jqno.equalsverifier.EqualsVerifier;
 
