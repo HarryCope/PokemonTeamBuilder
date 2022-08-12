@@ -31,13 +31,13 @@ public class PokemonService {
 		return repo.saveAll(pokemon);
 	}
 	
-	public boolean deletePokemon(Long id) {
-		Optional<Pokemon> currentPokemon = this.repo.findById(id);
+	public boolean deletePokemon(Long pokemonId) {
+		Optional<Pokemon> currentPokemon = this.repo.findById(pokemonId);
 		
 		boolean isPresent = (currentPokemon.isPresent()) ? true : false;
 		
 		if (isPresent) {
-			this.repo.deleteById(id);
+			this.repo.deleteById(pokemonId);
 			return true;
 		} else {
 			return false;
@@ -45,8 +45,8 @@ public class PokemonService {
 		
 	}
 	
-	public Pokemon updatePokemon(Pokemon updatePokemon, Long id) {  
-		Optional<Pokemon> currentPokemon = this.repo.findById(id);
+	public Pokemon updatePokemon(Pokemon updatePokemon, Long pokemonId) {  
+		Optional<Pokemon> currentPokemon = this.repo.findById(pokemonId);
 	
 		if (currentPokemon.get() instanceof Pokemon) {
 			Pokemon oldPokemon = currentPokemon.get();
@@ -62,11 +62,11 @@ public class PokemonService {
 	}
 	
 	public List<Pokemon> readAllPokemon() {      
-		return this.repo.findAll();  
+		return repo.findAll();  
 	}  
 	
-	public Pokemon readPokemon(Long id) {  
-		return repo.findById(id).get();  
+	public Pokemon readPokemon(Long pokemonId) {  
+		return repo.findById(pokemonId).get();  
 	}  
 }
 

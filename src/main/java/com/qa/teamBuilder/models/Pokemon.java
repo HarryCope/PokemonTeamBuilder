@@ -14,7 +14,7 @@ public class Pokemon {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long pokemonId;
+	private Long pokemon_id;
 	
 	@Column(nullable = false )
 	private String name;
@@ -36,9 +36,9 @@ public class Pokemon {
 		
 	}
 
-	public Pokemon(Long pokemonId, String name, String type, int level, String held_item) {
+	public Pokemon(Long pokemon_id, String name, String type, int level, String held_item) {
 		super();
-		this.pokemonId = pokemonId;
+		this.pokemon_id = pokemon_id;
 		this.name = name;
 		this.type = type;
 		this.level = level;
@@ -54,11 +54,11 @@ public class Pokemon {
 	}
 
 	public Long getPokemonId() {
-		return pokemonId;
+		return pokemon_id;
 	}
 
 	public void setPokemonId(Long pokemonId) {
-		this.pokemonId = pokemonId;
+		this.pokemon_id = pokemonId;
 	}
 	
 	public String getHeldItem() {
@@ -95,7 +95,7 @@ public class Pokemon {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(level, name, pokemonId, type, held_item);
+		return Objects.hash(level, name, pokemon_id, type, held_item);
 	}
 
 	@Override
@@ -107,13 +107,13 @@ public class Pokemon {
 		if (getClass() != obj.getClass())
 			return false;
 		Pokemon other = (Pokemon) obj;
-		return level == other.level && Objects.equals(name, other.name) && Objects.equals(pokemonId, other.pokemonId)
+		return level == other.level && Objects.equals(name, other.name) && Objects.equals(pokemon_id, other.pokemon_id)
 				&& Objects.equals(type, other.type) && Objects.equals(held_item, other.held_item);
 	}
 
 	@Override
 	public String toString() {
-		return "Pokemon [pokemonId= " + pokemonId + ", name= " + name + ", type= " + type + ", level= " + level + ", held item= " + held_item + "]";
+		return "Pokemon [pokemonId= " + pokemon_id + ", name= " + name + ", type= " + type + ", level= " + level + ", held item= " + held_item + "]";
 	}
 	
 	
