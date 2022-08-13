@@ -7,13 +7,19 @@ const modal = document.querySelector('#my-modal');
 const addButton = document.getElementById('#add-button');
 const closeButton = document.querySelector('.close');
 const addPokemon = document.querySelector('.btn btn-primary');
-//const pokemonListItem = document.querySelector("#tdlAccordionFlush");
 
 const newPokemonName = document.getElementById('newPokemonName');
 const newPokemonType = document.getElementById('newPokemonType');
 const newPokemonLevel = document.getElementById('newPokemonLevel');
 const newPokemonHeldItem = document.getElementById('newPokemonHeldItem');
 
+const editPokemonId = document.getElementById('updatePokemonId');
+const editPokemonName = document.getElementById('updatePokemonName');
+const editPokemonType = document.getElementById('updatePokemonType');
+const editPokemonLevel = document.getElementById('updatePokemonLevel');
+const editPokemonHeldItem = document.getElementById('updatePokemonHeldItem');
+
+const deletePokemonId = document.getElementById('deletePokemonId');
 
 const readPokemon = () => {
 	
@@ -68,20 +74,20 @@ const createPokemon = () => {
 };
 
 const updatePokemon = () => {
-    const editPokemonId = editPokemonSelect.value;
-    const editPokemonName = editPokemonName.value;
-    const editPokemonType = editPokemonType.value;
-    const editPokemonLevel = editPokemonLevel.value;
-    const editPokemonHeldItem = editPokemonHeldItem.value;
+    const editPokemonIdUpdate = editPokemonId.value;
+    const editPokemonNameUpdate = editPokemonName.value;
+    const editPokemonTypeUpdate = editPokemonType.value;
+    const editPokemonLevelUpdate = editPokemonLevel.value;
+    const editPokemonHeldItemUpdate = editPokemonHeldItem.value;
 
     let data = {
-        "name": editPokemonName,
-        "type": editPokemonType,
-        "level": editPokemonLevel,
-        "heldItem": editPokemonHeldItem
+        "name": editPokemonNameUpdate,
+        "type": editPokemonTypeUpdate,
+        "level": editPokemonLevelUpdate,
+        "heldItem": editPokemonHeldItemUpdate
     }
 
-    fetch(`${pokeUrl}/updatePokemon/${editPokemonId}`, {
+    fetch(`${pokeUrl}/updatePokemon/${editPokemonIdUpdate}`, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {
@@ -91,15 +97,15 @@ const updatePokemon = () => {
         .then(response => response.json())
         .then(model => {
             console.log(model)
-            refresh();
+            readPokemon();
         })
         .catch(err => console.error(`error ${err}`));
 };
 
 const deletePokemon = () => {
-    const editPokemonId = editPokemonSelect.value;
+    const editPokemonIdDelete = deletePokemonId.value;
 
-    fetch(`${pokeUrl}/delete/${editPokemonId}`, {
+    fetch(`${pokeUrl}/deletePokemon/${editPokemonIdDelete}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
@@ -107,8 +113,8 @@ const deletePokemon = () => {
     })
         .then(response => console.log(response))
         .then(() => {
-            console.log("Delete successful");
-            refresh();
+            console.log("Deleted pokemon successfully");
+            readPokemon();
         })
         .catch(err => console.error(`error ${err}`));
 };
