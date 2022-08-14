@@ -2,49 +2,50 @@ package com.qa.teamBuilder.models;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
 
 @Entity	
 public class Pokemon {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long pokemonId;
+	private Long pokemon_id;
 	
-	@NotNull
+	@Column(nullable = false )
 	private String name;
 	
-	@Size(min = 2, max = 12)
+	@Column
 	private String held_item;
 	
-	@NotNull
+	@Column(nullable = false )
 	private String type;
 	
-	@Min(1)
-	@Max(100)
+	//@Min(1)
+	//@Max(100)
+	@Column
 	private int level;
+	
+	
 	
 	public Pokemon() {
 		
 	}
 
-	public Pokemon(Long pokemonId, @NotNull String name, @NotNull String type, @Min(1) @Max(100) int level, @Size(min = 2, max = 12) String held_item) {
+	public Pokemon(Long pokemon_id, String name, String type, int level, String held_item) {
 		super();
-		this.pokemonId = pokemonId;
+		this.pokemon_id = pokemon_id;
 		this.name = name;
 		this.type = type;
 		this.level = level;
 		this.held_item = held_item;
 	}
 
-	public Pokemon(@NotNull String name, @NotNull String type, @Min(1) @Max(100) int level, @Size(min = 2, max = 12) String held_item) {
+	public Pokemon( String name,  String type, int level, String held_item) {
 		super();
 		this.name = name;
 		this.type = type;
@@ -53,11 +54,11 @@ public class Pokemon {
 	}
 
 	public Long getPokemonId() {
-		return pokemonId;
+		return pokemon_id;
 	}
 
 	public void setPokemonId(Long pokemonId) {
-		this.pokemonId = pokemonId;
+		this.pokemon_id = pokemonId;
 	}
 	
 	public String getHeldItem() {
@@ -94,7 +95,7 @@ public class Pokemon {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(level, name, pokemonId, type, held_item);
+		return Objects.hash(level, name, pokemon_id, type, held_item);
 	}
 
 	@Override
@@ -106,13 +107,13 @@ public class Pokemon {
 		if (getClass() != obj.getClass())
 			return false;
 		Pokemon other = (Pokemon) obj;
-		return level == other.level && Objects.equals(name, other.name) && Objects.equals(pokemonId, other.pokemonId)
+		return level == other.level && Objects.equals(name, other.name) && Objects.equals(pokemon_id, other.pokemon_id)
 				&& Objects.equals(type, other.type) && Objects.equals(held_item, other.held_item);
 	}
 
 	@Override
 	public String toString() {
-		return "Pokemon [pokemonId= " + pokemonId + ", name= " + name + ", type= " + type + ", level= " + level + ", held item= " + held_item + "]";
+		return "Pokemon [pokemonId= " + pokemon_id + ", name= " + name + ", type= " + type + ", level= " + level + ", held item= " + held_item + "]";
 	}
 	
 	

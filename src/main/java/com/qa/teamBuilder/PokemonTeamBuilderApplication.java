@@ -9,5 +9,4 @@ public class PokemonTeamBuilderApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PokemonTeamBuilderApplication.class, args);
 	}
-
 }
