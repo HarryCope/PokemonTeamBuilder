@@ -27,14 +27,8 @@ public class PokemonTest {
 		testPokemon = new Pokemon(1L, "Pikachu", "Electric", 50, "Focus Sash");
 	}
 
-	//@Test
-	//public void testEquals() {
-	//	EqualsVerifier.simple().forClass(Pokemon.class).verify();
-	//}
-
 	@Test
 	public void constructors_Pokemon_Pokemon() {
-		// Create Cat
 		Pokemon pokemonOne = new Pokemon();
 
 		assertTrue(pokemonOne instanceof Pokemon == true);
@@ -50,7 +44,6 @@ public class PokemonTest {
 	
 	@Test
 	public void constructors_Pokemon_PokemonWithId() {
-		// Create Cat
 		Pokemon pokemonOne = new Pokemon();
 
 		assertTrue(pokemonOne instanceof Pokemon == true);
@@ -65,22 +58,6 @@ public class PokemonTest {
 		assertEquals("Life Orb", pokemonTwo.getHeldItem());
 	}
 	
-	@Test
-	public void constructorsEmpty_Pokemon() {
-		// Create Cat
-		Pokemon pokemonOne = new Pokemon();
-
-		assertTrue(pokemonOne instanceof Pokemon == true);
-
-		Pokemon pokemonTwo = new Pokemon(1L, "Articuno", "Ice/Flying", 100, "Life Orb");
-
-		assertTrue(pokemonTwo instanceof Pokemon == true);
-		assertNull(pokemonTwo.getPokemonId());
-		assertNull(pokemonTwo.getName());
-		assertNull(pokemonTwo.getType());
-		assertNull(pokemonTwo.getLevel());
-		assertNull(pokemonTwo.getHeldItem());
-	}
 		
 	@Test
 	public void toString_String_PokemonInstance() {
