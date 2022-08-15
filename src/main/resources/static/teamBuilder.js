@@ -27,7 +27,7 @@ const readPokemon = () => {
             .then(function (response) {
                 return response.json();
             })
-            .then(function (data) {
+            .then(function (data) {				
                 appendData(data);
             })
             .catch(function (err) {
@@ -35,9 +35,10 @@ const readPokemon = () => {
             });
         function appendData(data) {
             var mainContainer = document.getElementById("myData");
+            mainContainer.textContent = '';
             for (var i = 0; i < data.length; i++) {
                 var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].name + ' ' + data[i].type + ' ' + data[i].level + ' ' + data[i].heldItem;
+                div.innerHTML = 'Name: ' + data[i].name + '  Type: ' + data[i].type + '  Level: ' + data[i].level + '  Held Item: ' + data[i].heldItem;
                 mainContainer.appendChild(div);
                 }
                 }
