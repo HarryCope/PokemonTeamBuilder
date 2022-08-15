@@ -1,8 +1,8 @@
 package com.qa.teamBuilder.controllerTest;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
@@ -48,24 +48,6 @@ public class PokemonControllerUnitTest {
 		
 	}
 	
-
-//	@Test
-//    public void listAllUsers_whenGetMethod()
-//            throws Exception {
-//
-//        User user = new User();
-//        user.setName("Test name");
-//
-//        List<User> allUsers = Arrays.asList(user);
-//
-//        given(listUserService
-//                .listAllUsers())
-//                .willReturn(allUsers);
-//
-//        mvc.perform(get("/users")
-//                .contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$", hasSize(1)))
-//                .andExpect(jsonPath("$[0].name", is(user.getName())));
-//    }
+	
+	
 }
