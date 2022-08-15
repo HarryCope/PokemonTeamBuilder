@@ -18,10 +18,25 @@ public class Team {
 	@Column(nullable = false)
 	private String team_name;
 
+	public Team() {
+		
+	}
+
+	public Team(String team_name) {
+		super();
+		this.team_name = team_name;
+	}
+
+	public Team(Long teamId, String team_name) {
+		super();
+		this.teamId = teamId;
+		this.team_name = team_name;
+	}
+	
 	public Long getTeamId() {
 		return teamId;
 	}
-
+	
 	public void setTeamId(Long teamId) {
 		this.teamId = teamId;
 	}

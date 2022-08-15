@@ -47,7 +47,6 @@ public class PokemonServiceUnitTest {
 		public void updatePokemon_ValidId_UpdatePokemon() {
 			
 			Long testId = 1L;
-			Pokemon updatePokemon = new Pokemon("Articuno", "Ice/Flying", 100, "Life Orb");
 			
 			Optional<Pokemon> mockOutputValid = Optional.ofNullable(new Pokemon(1L, "Pickachu", "Electric", 50, "Focus Sash"));
 			Pokemon expectedOutput = new Pokemon(1L, "Pikachu", "Electric", 50, "Focus Sash");
