@@ -18,8 +18,7 @@ Open the command line in the file where this project is saved and run the follow
 mvn clean
 mvn package
 ```
-
-##Loading the Webpage
+## Loading the web page
 
 By default the webpage is hosted on port:8080 and so in order to access it open a web browser and enter:
 
