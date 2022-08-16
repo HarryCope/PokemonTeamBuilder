@@ -19,6 +19,14 @@ mvn clean
 mvn package
 ```
 
+##Loading the Webpage
+
+By default the webpage is hosted on port:8080 and so in order to access it open a web browser and enter:
+
+```
+localhost:8080
+```
+
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
