@@ -95,7 +95,7 @@ public class Pokemon {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(level, name, pokemon_id, type, held_item);
+		return Objects.hash(level, name,  type, held_item);
 	}
 
 	@Override
@@ -107,8 +107,7 @@ public class Pokemon {
 		if (getClass() != obj.getClass())
 			return false;
 		Pokemon other = (Pokemon) obj;
-		return level == other.level && Objects.equals(name, other.name) && Objects.equals(pokemon_id, other.pokemon_id)
-				&& Objects.equals(type, other.type) && Objects.equals(held_item, other.held_item);
+		return level == other.level && Objects.equals(name, other.name) && Objects.equals(type, other.type) && Objects.equals(held_item, other.held_item);
 	}
 
 	@Override

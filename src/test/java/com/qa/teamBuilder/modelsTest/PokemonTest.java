@@ -12,6 +12,9 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import com.qa.teamBuilder.models.Pokemon;
+import com.qa.teamBuilder.models.Team;
+
+import nl.jqno.equalsverifier.EqualsVerifier;
 
 //import nl.jqno.equalsverifier.EqualsVerifier;
 
@@ -117,6 +120,10 @@ public class PokemonTest {
         assertEquals(expected.get(testEntry), 50);
     }
 	
+	@Test
+	public void hashAndEqualsTest() {
+	    EqualsVerifier.simple().forClass(Pokemon.class).verify();
+	}
 	
 }
 
