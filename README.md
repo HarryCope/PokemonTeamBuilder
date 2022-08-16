@@ -18,6 +18,13 @@ Open the command line in the file where this project is saved and run the follow
 mvn clean
 mvn package
 ```
+
+## Things to add
+
+In the future or if I had more time I would have liked to have added a library of images to correspont to each of the pokemon. Also the system of updating and removing pokemon is predicated of knowing the pokemon id which is not displayed so i would either present the id in the list or create some error messages to show a false input.
+
+
+
 ## Loading the web page
 
 By default the webpage is hosted on port:8080 and so in order to access it open a web browser and enter:
