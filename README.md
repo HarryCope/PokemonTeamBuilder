@@ -1,3 +1,5 @@
+Coverage = 80%
+
 # PokemonTeamBuilder
 
 This involved creating an API to provide CRUD functionality to be used in a webpage to be able to create, update, read and delete pokemon and have a list of them on the screen. It uses fetch apis in order to call the java functions into the javascript file.
