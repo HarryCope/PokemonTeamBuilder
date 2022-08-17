@@ -44,7 +44,6 @@ const readPokemon = () => {
                 }
                };
     
-
 const createPokemon = () => {
     const newPokemonNameCreate = newPokemonName.value;
     const newPokemonTypeCreate = newPokemonType.value;
