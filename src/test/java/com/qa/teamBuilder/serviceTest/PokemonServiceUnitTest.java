@@ -60,23 +60,23 @@ public class PokemonServiceUnitTest {
 			Mockito.verify(this.repo, Mockito.times(1)).findById(testId);		
 		}
 		
+		 @Test
+		    public void readPokemon_ValidPokemon_ReadPokemon() {
+		        List<Pokemon> pokeList = new ArrayList<>();
+		        pokeList.add(new Pokemon(1L, "Pickachu", "Electric", 50, "Focus Sash"));
 
-		
-//		@RunWith(MockitoJUnitRunner.class)
-//		public class ListUserServiceTest {
-//		    @Test
-//		    public void readAllPokemonTest() {
-//		        List<Pokemon> pokemon = new ArrayList();
-//		        pokemon.add(new Pokemon());
-//
-//	
-//		        List<Pokemon> expected = PokemonService.readAllPokemon();
-//	
-//		        assertEquals(expected, pokemon);
-//		        verify(repo).findAll();
-//		    }
-//		    
-//		}   
+		        Mockito.when(this.service.readAllPokemon()).thenReturn(pokeList);
+		        assertEquals(pokeList, this.service.readAllPokemon());
+		        Mockito.verify(this.repo, Mockito.times(1)).findAll();
+		    }
+		@Test
+		    public void deleteToDo_ToDo() {
+		        Pokemon validPokemon = new Pokemon(4L, "Pickachu", "Electric", 50, "Focus Sash");
+
+		        Mockito.when(this.repo.findById(validPokemon.getPokemonId())).thenReturn(Optional.of(validPokemon));
+		        this.service.deletePokemon(validPokemon.getPokemonId());
+		        Mockito.verify(this.repo, Mockito.times(1)).deleteById(validPokemon.getPokemonId());
+		    }
 		}
 		
 		
