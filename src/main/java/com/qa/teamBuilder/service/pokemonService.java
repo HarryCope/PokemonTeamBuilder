@@ -27,9 +27,6 @@ public class PokemonService {
 		return repo.save(pokemon);
 	}
 	
-	public List<Pokemon> createManyPokemon(List<Pokemon> pokemon) {
-		return repo.saveAll(pokemon);
-	}
 	
 	public boolean deletePokemon(Long pokemonId) {
 		Optional<Pokemon> currentPokemon = this.repo.findById(pokemonId);
