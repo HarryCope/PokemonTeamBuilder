@@ -51,7 +51,7 @@ public class Team {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(teamId, team_name);
+		return Objects.hash(team_name);
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class Team {
 		if (getClass() != obj.getClass())
 			return false;
 		Team other = (Team) obj;
-		return Objects.equals(teamId, other.teamId) && Objects.equals(team_name, other.team_name);
+		return Objects.equals(team_name, other.team_name);
 	}
 
 	@Override

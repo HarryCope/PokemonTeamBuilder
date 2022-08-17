@@ -12,6 +12,8 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import com.qa.teamBuilder.models.Team;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
+
 @TestInstance(Lifecycle.PER_CLASS)
 public class TeamTest {
 	
@@ -75,4 +77,8 @@ public class TeamTest {
         assertEquals(expected.get(testEntry), "Team Updated");
     }
 
+	@Test
+	public void hashAndEqualsTest() {
+	    EqualsVerifier.simple().forClass(Team.class).verify();
+	}
 }
