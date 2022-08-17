@@ -114,6 +114,6 @@ public class Pokemon {
 	public String toString() {
 		return "Pokemon [pokemonId= " + pokemon_id + ", name= " + name + ", type= " + type + ", level= " + level + ", held item= " + held_item + "]";
 	}
-	
+
 	
 }
