@@ -1,5 +1,7 @@
 Coverage = 80%
 
+My Trello board: https://trello.com/invite/b/wGyMkVe7/c1ba3c17659912cbdd026aeb9dc54b59/api-project
+
 # PokemonTeamBuilder
 
 This involved creating an API to provide CRUD functionality to be used in a webpage to be able to create, update, read and delete pokemon and have a list of them on the screen. It uses fetch apis in order to call the java functions into the javascript file.
