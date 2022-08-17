@@ -1,4 +1,4 @@
-Coverage = 80%
+Coverage = 86.6%
 
 My Trello board: https://trello.com/invite/b/wGyMkVe7/c1ba3c17659912cbdd026aeb9dc54b59/api-project
 
